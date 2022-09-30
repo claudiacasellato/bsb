@@ -1,23 +1,37 @@
-__pycache__/
-*.gdf
-*.pyc
 *.hdf5
 *.swc
 *.h5
+bsb-*/
+
+# pip & python artifacts
+__pycache__/
+*.pyc
 build/
 dist/
-bsb-*/
 *.egg-info/
 pip-wheel-metadata/
 .python-version
+
+# Env files
 dev_env/
 test_env/
+
+# NEURON files
 nrnmech.dll
+
+# NEST files
+*.gdf
+
+# CI files
 .coverage
 htmlcov/
-.idea/
-!morphologies.hdf5
+
 # Ignore report files
 *.io
+
+# IDEs
+.idea/
 .vscode/
-bsb-*/
+
+# Jupyter
+.ipynb_checkpoints
