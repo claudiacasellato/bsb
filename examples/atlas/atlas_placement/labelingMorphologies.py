@@ -42,12 +42,21 @@ print(cell.labelsets)
 # for b in apical_dendrites:
 #     b.label(["dendrites"])
 # #cell.labels.label(["dendrites", "labels"], apical_dendrites)
-#
 # mr.save("test2", cell)
 
-
 ####### PLOTTING
-plot_morphology(cell, color={"soma": "black", "axon": "red", "dendrites": "blue"})
+# rng = cell.bounds
+# print(type(rng))
+# print(rng)
+# rng_absMin = np.min(cell.bounds[0])
+# rng_absMax = np.max(cell.bounds[1])
+# rngL=list(rng)
+# rngL[0] = np.array([rng_absMin,rng_absMin, rng_absMin])
+# rngL[1] = np.array([rng_absMax,rng_absMax, rng_absMax])
+# rng=tuple(rngL)
+# print(rng)
+# print(type(rng))
+plot_morphology(cell)
 
 
 # fig = go.Figure()
