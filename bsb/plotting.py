@@ -358,6 +358,9 @@ def plot_voxel_cloud(
 
 
 def get_branch_trace(branch, offset=[0.0, 0.0, 0.0], color="black", width=1.0):
+    if isinstance(color, dict):
+        labels= branch.list_labels()
+        color = color[labels[0]]
     return go.Scatter3d(
         x=branch.points[:, 0],
         y=branch.points[:, 2],
@@ -429,7 +432,7 @@ def plot_morphology(
     show=True,
     legend=True,
     set_range=True,
-    color="black",
+    color={'soma': 'black', 'dendrites': 'blue', 'axon': 'green'},
     reduce_branches=False,
     soma_radius=None,
     soma_opacity=1.0,

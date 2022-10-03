@@ -11,7 +11,7 @@ import plotly.graph_objects as go
 #cell = Morphology.from_swc("morphologies/PyramidalCell.swc")
 
 ####or
-net=from_hdf5("VISp.hdf5")
+net = Storage("hdf5", "VISp.hdf5")
 mr = net.morphologies
 cell = mr.load("test1")
 # print(np.sum(cell.tags == 1))
@@ -56,7 +56,7 @@ print(cell.labelsets)
 # rng=tuple(rngL)
 # print(rng)
 # print(type(rng))
-plot_morphology(cell)
+plot_morphology(cell, color={'soma': 'black', 'apical_dendrites': 'green', 'axon': 'violet', 'basal_dendrites': 'blue'})
 
 
 # fig = go.Figure()
