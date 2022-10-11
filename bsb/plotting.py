@@ -360,7 +360,12 @@ def plot_voxel_cloud(
 def get_branch_trace(branch, offset=[0.0, 0.0, 0.0], color="black", width=1.0):
     if isinstance(color, dict):
         labels= branch.list_labels()
-        color = color[labels[0]]
+        if "soma" in labels:
+            color = color["soma"]
+        if "dendrites" in labels:
+            color = color["dendrites"]
+        if "axon" in labels:
+            color = color["axon"]
     return go.Scatter3d(
         x=branch.points[:, 0],
         y=branch.points[:, 2],
